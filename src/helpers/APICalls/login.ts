@@ -7,7 +7,7 @@ const login = async (email: string, password: string): Promise<AuthApiData> => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
-    credentials: 'include',
+    credentials: 'same-origin',
   };
   return await fetch(`${baseUrl}/auth/login`, fetchOptions)
     .then((res) => res.json())

@@ -5,7 +5,7 @@ import { baseUrl } from '../util';
 const logout = async (): Promise<AuthApiData> => {
   const fetchOptions: FetchOptions = {
     method: 'GET',
-    credentials: 'include',
+    credentials: 'same-origin',
   };
   return await fetch(`${baseUrl}/auth/logout`, fetchOptions)
     .then((res) => res.json())

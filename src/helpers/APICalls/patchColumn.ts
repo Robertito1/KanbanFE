@@ -8,7 +8,7 @@ const patchColumn = async (column: UpdateColumn): Promise<ColumnApiData> => {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(column),
-    credentials: 'include',
+    credentials: 'same-origin',
   };
   return await fetch(`${baseUrl}/column/edit/${column._id}`, fetchOptions)
     .then((res) => res.json())

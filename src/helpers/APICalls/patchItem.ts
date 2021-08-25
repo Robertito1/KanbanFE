@@ -7,7 +7,7 @@ const patchItem = async (item: UpdatedItem): Promise<ItemApiData> => {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(item),
-    credentials: 'include',
+    credentials: 'same-origin',
   };
   return await fetch(`${baseUrl}/card/checklist/item/${item._id}`, fetchOptions)
     .then((res) => res.json())
