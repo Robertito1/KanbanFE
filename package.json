@@ -44,7 +44,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://cors-anywhere.herokuapp.com/https://intense-retreat-24063.herokuapp.com/",
+  "proxy": "https://shielded-ravine-63689.herokuapp.com/https://intense-retreat-24063.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",
