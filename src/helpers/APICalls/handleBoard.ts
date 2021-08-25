@@ -1,6 +1,7 @@
 import { Column } from '../../interface/Board';
 import { HandleBoardApiData } from '../../interface/BoardApiData';
 import { FetchOptions } from '../../interface/FetchOptions';
+import { baseUrl } from '../util';
 
 const handleBoard = async (boardId: string, columns: Column[]): Promise<HandleBoardApiData> => {
   const fetchOptions: FetchOptions = {
@@ -9,7 +10,7 @@ const handleBoard = async (boardId: string, columns: Column[]): Promise<HandleBo
     body: JSON.stringify({ columns }),
     credentials: 'include',
   };
-  return await fetch(`/board/handle/${boardId}`, fetchOptions)
+  return await fetch(`${baseUrl}/board/handle/${boardId}`, fetchOptions)
     .then((res) => res.json())
     .catch(() => ({
       error: 'Unable to connect to server. Please try again',

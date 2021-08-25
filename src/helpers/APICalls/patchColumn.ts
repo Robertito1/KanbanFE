@@ -1,6 +1,7 @@
 import { UpdateColumn } from '../../interface/Board';
 import { ColumnApiData } from '../../interface/BoardApiData';
 import { FetchOptions } from '../../interface/FetchOptions';
+import { baseUrl } from '../util';
 
 const patchColumn = async (column: UpdateColumn): Promise<ColumnApiData> => {
   const fetchOptions: FetchOptions = {
@@ -9,7 +10,7 @@ const patchColumn = async (column: UpdateColumn): Promise<ColumnApiData> => {
     body: JSON.stringify(column),
     credentials: 'include',
   };
-  return await fetch(`/column/edit/${column._id}`, fetchOptions)
+  return await fetch(`${baseUrl}/column/edit/${column._id}`, fetchOptions)
     .then((res) => res.json())
     .catch(() => ({
       error: 'Unable to connect to server. Please try again',

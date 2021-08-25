@@ -1,0 +1,1 @@
+export const baseUrl: string = 'https://cors-anywhere.herokuapp.com/https://intense-retreat-24063.herokuapp.com'

@@ -1,5 +1,6 @@
 import { ItemApiData, UpdatedItem } from '../../interface/ChecklistApiData';
 import { FetchOptions } from '../../interface/FetchOptions';
+import { baseUrl } from '../util';
 
 const patchItem = async (item: UpdatedItem): Promise<ItemApiData> => {
   const fetchOptions: FetchOptions = {
@@ -8,7 +9,7 @@ const patchItem = async (item: UpdatedItem): Promise<ItemApiData> => {
     body: JSON.stringify(item),
     credentials: 'include',
   };
-  return await fetch(`/card/checklist/item/${item._id}`, fetchOptions)
+  return await fetch(`${baseUrl}/card/checklist/item/${item._id}`, fetchOptions)
     .then((res) => res.json())
     .catch(() => ({
       error: 'Unable to connect to server. Please try again',
