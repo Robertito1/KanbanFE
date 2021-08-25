@@ -8,7 +8,7 @@ const postCard = async (card: CreateCard): Promise<CardApiData> => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(card),
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/card/create`, fetchOptions)
     .then((res) => res.json())

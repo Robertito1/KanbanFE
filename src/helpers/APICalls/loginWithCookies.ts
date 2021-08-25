@@ -5,7 +5,7 @@ import { baseUrl } from '../util';
 const loginWithCookies = async (): Promise<AuthApiData> => {
   const fetchOptions: FetchOptions = {
     method: 'GET',
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/auth/user`, fetchOptions)
     .then((res) => res.json())

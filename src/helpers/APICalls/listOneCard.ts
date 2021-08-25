@@ -6,7 +6,7 @@ const cardDetails = async (cardId: string): Promise<CardApiData> => {
   const fetchOptions: FetchOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/card/list/${cardId}`, fetchOptions)
     .then((res) => res.json())

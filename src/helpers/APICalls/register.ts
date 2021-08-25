@@ -7,7 +7,7 @@ const register = async (username: string, email: string, password: string): Prom
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, email, password }),
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/auth/register`, fetchOptions)
     .then((res) => res.json())

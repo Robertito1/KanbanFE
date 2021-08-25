@@ -9,7 +9,7 @@ interface Props {
 export async function searchUsers({ search }: Props): Promise<SearchUsersApiData> {
   const fetchOptions: FetchOptions = {
     method: 'GET',
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/users?search=${search}`, fetchOptions)
     .then((res) => res.json())

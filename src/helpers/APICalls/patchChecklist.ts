@@ -7,7 +7,7 @@ const patchChecklist = async (checklistId: string, items: CreateItem[]): Promise
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ items }),
-    credentials: 'same-origin',
+    credentials: 'include',
   };
   return await fetch(`${baseUrl}/card/checklist/${checklistId}`, fetchOptions)
     .then((res) => res.json())
